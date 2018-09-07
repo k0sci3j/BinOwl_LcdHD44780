@@ -9,7 +9,7 @@
 
 #include "OWL_LcdHD44780.h"
 
-void _OWL_LcdHD44780Write4bit(uint8_t data) {
+__STATIC_INLINE void _OWL_LcdHD44780Write4bit(uint8_t data) {
 	HAL_GPIO_WritePin(LCD_D4_GPIO_Port, LCD_D4_Pin, data & 0x1);
 	HAL_GPIO_WritePin(LCD_D5_GPIO_Port, LCD_D5_Pin, data & 0x2);
 	HAL_GPIO_WritePin(LCD_D6_GPIO_Port, LCD_D6_Pin, data & 0x4);
@@ -20,7 +20,7 @@ void _OWL_LcdHD44780Write4bit(uint8_t data) {
 	OWL_DelayMicroseconds(50); //Command execution
 }
 
-void _OWL_LcdHD44780Write8bit(uint8_t data) {
+__STATIC_INLINE void _OWL_LcdHD44780Write8bit(uint8_t data) {
 	_OWL_LcdHD44780Write4bit(data >> 4);
 	_OWL_LcdHD44780Write4bit(data);
 }

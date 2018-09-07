@@ -58,7 +58,7 @@ typedef enum {
 } LCDHD44780_LCDType;
 
 /* Definitions */
-volatile LCDHD44780_LCDType _LCDHD44780_LCDType;
+LCDHD44780_LCDType _LCDHD44780_LCDType;
 
 void OWL_LcdHD44780Init(LCDHD44780_LCDType lcd_type);
 void OWL_LcdHD44780Clear();
